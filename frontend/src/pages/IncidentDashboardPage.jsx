@@ -22,7 +22,7 @@ const IncidentDashboardPage = () => {
 
   const fetchIncidents = async (orgId, userId, role) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/incidents?organization_id=${orgId}&user_id=${userId}&role=${role}`);
+      const response = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/incidents?organization_id=${orgId}&user_id=${userId}&role=${role}`);
       if (!response.ok) throw new Error('Failed to fetch');
       const data = await response.json();
       setIncidents(data);
@@ -36,7 +36,7 @@ const IncidentDashboardPage = () => {
   const handleReport = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/incidents', {
+      const response = await fetch('https://cyber-insurance-risk-assessment-system.onrender.com/api/incidents', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newIncident),

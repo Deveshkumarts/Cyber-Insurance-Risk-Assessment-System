@@ -33,7 +33,7 @@ const InsuranceDashboardPage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/insurance-dashboard/${orgId}`);
+      const response = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/insurance-dashboard/${orgId}`);
       if (response.ok) {
         const json = await response.json();
         setData(json);

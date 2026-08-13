@@ -39,7 +39,7 @@ const AssessmentPage = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/assessment', {
+      const response = await fetch('https://cyber-insurance-risk-assessment-system.onrender.com/api/assessment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ const AssessmentPage = () => {
     if (!organization) {
       navigate('/login');
     } else {
-      fetch(`http://localhost:5000/api/assessment/organization/${organization.id}`)
+      fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/assessment/organization/${organization.id}`)
         .then(res => res.json())
         .then(data => {
             setPastAssessments(data);

@@ -34,7 +34,7 @@ const IncidentDetailsPage = () => {
 
   const fetchIncidentDetails = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/incidents/${id}`);
+      const response = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/incidents/${id}`);
       if (!response.ok) throw new Error('Failed to fetch');
       const result = await response.json();
       setData(result);
@@ -60,7 +60,7 @@ const IncidentDetailsPage = () => {
   const handleAddLog = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000/api/incidents/${id}/logs`, {
+      const response = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/incidents/${id}/logs`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newLog),
@@ -77,7 +77,7 @@ const IncidentDetailsPage = () => {
   const handleSaveInvestigation = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000/api/incidents/${id}/investigation`, {
+      const response = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/incidents/${id}/investigation`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(investigationData),
@@ -96,7 +96,7 @@ const IncidentDetailsPage = () => {
     e.preventDefault();
     if (!newUpdate.trim()) return;
     try {
-      const response = await fetch(`http://localhost:5000/api/incidents/${id}/updates`, {
+      const response = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/incidents/${id}/updates`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

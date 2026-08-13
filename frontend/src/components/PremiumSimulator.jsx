@@ -19,7 +19,7 @@ const PremiumSimulator = ({ initialData, onUpdate }) => {
     
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/simulate-premium', {
+      const response = await fetch('https://cyber-insurance-risk-assessment-system.onrender.com/api/simulate-premium', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updated)

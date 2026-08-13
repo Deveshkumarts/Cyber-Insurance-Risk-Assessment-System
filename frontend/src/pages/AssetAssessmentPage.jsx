@@ -37,7 +37,7 @@ const AssetAssessmentPage = () => {
         threat_probability: mappedThreat || prev.threat_probability
       }));
 
-      fetch(`http://localhost:5000/api/insurance-quotes/organization/${organization.id}`)
+      fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/insurance-quotes/organization/${organization.id}`)
         .then(res => res.json())
         .then(data => {
             setPastQuotes(data);
@@ -73,7 +73,7 @@ const AssetAssessmentPage = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/assets', {
+      const response = await fetch('https://cyber-insurance-risk-assessment-system.onrender.com/api/assets', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

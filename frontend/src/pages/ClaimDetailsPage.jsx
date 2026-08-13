@@ -26,7 +26,7 @@ const ClaimDetailsPage = () => {
 
   const fetchClaimDetails = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/claims/${id}`);
+      const response = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/claims/${id}`);
       if (!response.ok) throw new Error('Failed to fetch');
       const data = await response.json();
       setClaim(data.claim);
@@ -51,7 +51,7 @@ const ClaimDetailsPage = () => {
     formData.append('uploaded_by', organization?.name || 'Admin');
 
     try {
-      const response = await fetch('http://localhost:5000/api/claims/evidence', {
+      const response = await fetch('https://cyber-insurance-risk-assessment-system.onrender.com/api/claims/evidence', {
         method: 'POST',
         body: formData, // fetch automatically sets multipart/form-data boundary
       });
@@ -71,7 +71,7 @@ const ClaimDetailsPage = () => {
 
   const handleVerifyEvidence = async (evidenceId, isVerified) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/claims/evidence/${evidenceId}/verify`, {
+      const response = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/claims/evidence/${evidenceId}/verify`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -90,7 +90,7 @@ const ClaimDetailsPage = () => {
 
   const handleEvaluateClaim = async (newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/claims/${id}/evaluate`, {
+      const response = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/claims/${id}/evaluate`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

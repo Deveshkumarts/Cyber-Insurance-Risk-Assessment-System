@@ -17,8 +17,8 @@ const DashboardPage = () => {
     const fetchDashboardData = async () => {
       try {
         const [assRes, recRes] = await Promise.all([
-          fetch(`http://localhost:5000/api/assessment/${id}`),
-          fetch(`http://localhost:5000/api/recommendations/${id}`)
+          fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/assessment/${id}`),
+          fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/recommendations/${id}`)
         ]);
 
         if (assRes.ok && recRes.ok) {
@@ -29,7 +29,7 @@ const DashboardPage = () => {
           
           if (assessmentData.org_id) {
             try {
-              const quoteRes = await fetch(`http://localhost:5000/api/insurance-quotes/organization/${assessmentData.org_id}`);
+              const quoteRes = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/insurance-quotes/organization/${assessmentData.org_id}`);
               if (quoteRes.ok) {
                 const quotes = await quoteRes.json();
                 if (quotes && quotes.length > 0) {

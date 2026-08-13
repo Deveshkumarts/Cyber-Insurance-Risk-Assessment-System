@@ -21,7 +21,7 @@ const ClaimSubmissionPage = () => {
 
   const fetchIncidents = async (orgId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/incidents?organization_id=${orgId}`);
+      const response = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/incidents?organization_id=${orgId}`);
       if (!response.ok) throw new Error('Failed to fetch');
       const data = await response.json();
       setIncidents(data);
@@ -38,7 +38,7 @@ const ClaimSubmissionPage = () => {
     
     setSubmitting(true);
     try {
-      const response = await fetch('http://localhost:5000/api/claims', {
+      const response = await fetch('https://cyber-insurance-risk-assessment-system.onrender.com/api/claims', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -48,7 +48,7 @@ const AnalyticsDashboardPage = () => {
 
   const fetchAnalytics = async (orgId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/analytics/${orgId}`);
+      const response = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/analytics/${orgId}`);
       if (!response.ok) throw new Error('Failed to fetch analytics');
       const data = await response.json();
       setAnalytics(data);

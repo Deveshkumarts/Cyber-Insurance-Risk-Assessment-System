@@ -10,7 +10,7 @@ const Navbar = () => {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/organizations')
+    fetch('https://cyber-insurance-risk-assessment-system.onrender.com/api/organizations')
       .then(res => res.json())
       .then(data => setOrganizations(data))
       .catch(err => console.error('Failed to load organizations', err));

@@ -15,7 +15,7 @@ const ClaimDashboardPage = () => {
 
   const fetchClaims = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/claims');
+      const response = await fetch('https://cyber-insurance-risk-assessment-system.onrender.com/api/claims');
       if (!response.ok) throw new Error('Failed to fetch');
       const data = await response.json();
       setClaims(data);

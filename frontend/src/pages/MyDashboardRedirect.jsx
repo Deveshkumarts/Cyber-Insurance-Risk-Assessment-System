@@ -16,7 +16,7 @@ const MyDashboardRedirect = () => {
 
     const fetchLatestAssessment = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/assessment/organization/${organization.id}`);
+        const response = await fetch(`https://cyber-insurance-risk-assessment-system.onrender.com/api/assessment/organization/${organization.id}`);
         if (response.ok) {
           const data = await response.json();
           if (data && data.length > 0) {

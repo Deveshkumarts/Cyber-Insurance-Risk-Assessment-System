@@ -10,7 +10,7 @@ const KnowledgeBasePage = () => {
     // Fetch data from backend
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/knowledge-base');
+        const response = await fetch('https://cyber-insurance-risk-assessment-system.onrender.com/api/knowledge-base');
         const result = await response.json();
         setData(result);
         setLoading(false);
