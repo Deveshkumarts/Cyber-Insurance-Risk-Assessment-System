@@ -1,7 +1,5 @@
 # Cyber Insurance Risk Assessment System (CIRAS)
 
-![CIRAS Preview](frontend/src/assets/hero.png) <!-- Update this path if a screenshot exists -->
-
 CIRAS is a comprehensive, full-stack web application designed to help organizations evaluate their cybersecurity posture, estimate cyber insurance premiums, investigate active threats, and forecast future risks using data-driven analytics. 
 
 ## 🚀 Key Features
