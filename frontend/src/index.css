@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-cyber-dark text-cyber-text font-sans antialiased;
+}
+
+.glass-card {
+  @apply bg-cyber-light bg-opacity-80 backdrop-blur-md border border-gray-800 rounded-xl shadow-lg;
+}
+
+.neon-border {
+  @apply border border-cyber-neon shadow-[0_0_10px_rgba(0,240,255,0.3)];
+}
+
+.hover-neon {
+  @apply transition-all duration-300 hover:border-cyber-neon hover:shadow-[0_0_15px_rgba(0,240,255,0.4)];
+}
